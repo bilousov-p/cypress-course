@@ -1,44 +1,49 @@
-import NavItem from "./NavItem"
+import NavItem from './NavItem';
 
 const navItems = [
-    {
+  {
     label: 'Why Cypress?',
     path: '/',
-    },
-    {
+    dataTestId: 'nav-why-cypress'
+  },
+  {
     label: 'Overview',
-    path: '/overview'
-    },
-    {
+    path: '/overview',
+    dataTestId: 'nav-overview'
+  },
+  {
     label: 'Fundamentals',
-    path: '/fundamentals'
-    },
-    {
-        label: 'Forms',
-        path: '/forms'
-    },
-    {
-        label: 'Examples',
-        path: '/examples' 
-    },
-    {
-        label: 'Component',
-        path: '/component' 
-    },
-    {
-        label: 'Best Practices',
-        path: '/best-practices'
-    },
-]
+    path: '/fundamentals',
+    dataTestId: 'nav-fundamentals'
+  },
+  {
+    label: 'Forms',
+    path: '/forms',
+    dataTestId: 'nav-forms'
+  },
+  {
+    label: 'Examples',
+    path: '/examples',
+    dataTestId: 'nav-emaples'
+  },
+  {
+    label: 'Component',
+    path: '/component',
+    dataTestId: 'nav-component'
+  },
+  {
+    label: 'Best Practices',
+    path: '/best-practices',
+    dataTestId: 'nav-best-practices'
+  },
+];
 
-export default function NavBar(){
-    return (
-        <ul className="nav-bar">
-            {
-                navItems.map((item)=> (
-                    <NavItem key={item.label} label={item.label} path={item.path} />
-                ))
-            }
-        </ul>
-    )
+export default function NavBar() {
+  return (
+    <ul className="nav-bar">
+      {navItems.map((item) => (
+        <NavItem dataTestId={item.dataTestId} key={item.label} label={item.label} path={item.path} />
+      ))}
+    </ul>
+  );
 }
